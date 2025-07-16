@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery & Data | Jamhuriya University Final Project</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/jpeg" href="jamacad.jpg" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Perfume Gallery</a></li>
+        <li><a href="booking.html">Order Perfume</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-flex">
+    <section class="gallery-data-flex" style="display: flex; gap: 2rem; align-items: flex-start;">
+      <div class="gallery-section" style="flex: 1;">
+        <h2>Perfume Gallery</h2>
+        <div class="gallery-images">
+          <img src="brand.jpg" alt="Rose Elegance" data-perfume="perfume1" style="cursor:pointer;" />
+          <img src="geed.jpg" alt="Ocean Spirit" data-perfume="perfume2" style="cursor:pointer;" />
+          <img src="mid.jpg" alt="Night Oud" data-perfume="perfume3" style="cursor:pointer;" />
+          <img src="sid.jpg" alt="Citrus Dream" data-perfume="perfume4" style="cursor:pointer;" />
+          <img src="white.jpg" alt="Amber Gold" data-perfume="perfume5" style="cursor:pointer;" />
+          <img src="bottle-parfum-table.jpg" alt="Lavender Sky" data-perfume="perfume6" style="cursor:pointer;" />
+        </div>
+      </div>
+      <div class="data-section" style="flex: 1;">
+        <h2>Perfume Data Table</h2>
+        <table>
+          <thead>
+            <tr><th>Perfume Name</th><th>Brand</th><th>Price</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr id="perfume1"><td>Rose Elegance</td><td>FloraLux</td><td>$45</td><td>Rose, Jasmine, Musk</td></tr>
+            <tr id="perfume2"><td>Ocean Spirit</td><td>BlueWave</td><td>$55</td><td>Bergamot, Sea Salt, Amber</td></tr>
+            <tr id="perfume3"><td>Night Oud</td><td>Royal Essence</td><td>$70</td><td>Oud, Patchouli, Vanilla</td></tr>
+            <tr id="perfume4"><td>Citrus Dream</td><td>FreshScents</td><td>$38</td><td>Lemon, Orange Blossom, Cedar</td></tr>
+            <tr id="perfume5"><td>Amber Gold</td><td>Luxury Line</td><td>$80</td><td>Amber, Sandalwood, Tonka Bean</td></tr>
+            <tr id="perfume6"><td>Lavender Sky</td><td>Nature's Touch</td><td>$42</td><td>Lavender, Iris, Musk</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="4">Featured Perfumes</td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+  <script>
+    // Highlight the corresponding perfume row when an image is clicked
+    document.querySelectorAll('.gallery-images img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        // Remove highlight from all rows
+        document.querySelectorAll('.data-section tr').forEach(function(row) {
+          row.classList.remove('highlight-row');
+        });
+        // Highlight the corresponding row
+        var perfumeId = img.getAttribute('data-perfume');
+        var row = document.getElementById(perfumeId);
+        if(row) row.classList.add('highlight-row');
+      });
+    });
+  </script>
+  <style>
+    .highlight-row {
+      background-color: #ffe082 !important;
+      transition: background 0.3s;
+    }
+  </style>
+    <p>&copy; 2025 Perfume Shop | All rights reserved.</p>
+  </footer>
+</body>
+</html>

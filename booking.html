@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking | Jamhuriya University Final Project</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body style="background-image: url('mid.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Perfume Gallery</a></li>
+        <li><a href="booking.html">Order Perfume</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-flex">
+    <section class="booking-section">
+      <h1>Order Perfume</h1>
+      <form>
+        <fieldset>
+          <legend>Perfume Order Form</legend>
+          <label for="customer_name">Full Name:</label>
+          <input type="text" id="customer_name" name="customer_name" required placeholder="Your full name" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="Your email address" /> <br><br>
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Your phone number" /> <br><br>
+
+          <label for="perfume">Select Perfume:</label> <br>
+          <select id="perfume" name="perfume" required>
+            <option value="">Choose a perfume</option>
+            <option value="Rose Elegance">Rose Elegance</option>
+            <option value="Ocean Spirit">Ocean Spirit</option>
+            <option value="Night Oud">Night Oud</option>
+            <option value="Citrus Dream">Citrus Dream</option>
+            <option value="Amber Gold">Amber Gold</option>
+            <option value="Lavender Sky">Lavender Sky</option>
+          </select>
+
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required /> <br><br>
+
+          <label for="address">Delivery Address:</label>
+          <textarea id="address" name="address" rows="3" required placeholder="Your delivery address"></textarea>
+
+          <button type="submit">Place Order</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Perfume Shop | All rights reserved.</p>
+  </footer>
+</body>
+</html>
